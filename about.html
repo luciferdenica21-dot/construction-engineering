@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог Konnektor</title>
+    <link rel="stylesheet" href="about.css">
+
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <img src="img/логотип.png" alt="logo" class="logo">
+                <span class="brand-name">Konnektor</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Главная страница</a></li>
+                <li><a href="#" class="nav-link">УСЛОВИЯ</a></li>
+                <li><a href="#" class="nav-link">УСЛУГИ</a></li>
+                <li><a href="#" class="nav-link">КОНТАКТЫ</a></li>
+                <li><a href="#" class="nav-link">ВОЙТИ</a></li>
+            </ul>
+            <button class="quote-btn"><a href="">Связаться</a></button>
+        </nav>
+    </header>
+
+    <div class="gallery-container" id="gallery">
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-image-box">
+                <img id="modal-img" src="" alt="Детальное фото">
+            </div>
+            <div class="modal-text-box">
+                <span id="modal-badge" class="modal-badge">Категория</span>
+                <h2 id="modal-title" class="modal-title">Заголовок</h2>
+                <div id="modal-desc" class="modal-desc">Описание...</div>
+                <button class="modal-btn" onclick="alert('Заявка отправлена!')">Узнать стоимость</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

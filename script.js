@@ -1,0 +1,102 @@
+// 1. Данные для галереи
+const galleryData = [
+    { id: 1, title: "Лазерная установка CO2", category: "Лазерная резка", keywords: "laser-cutting-machine" },
+    { id: 2, title: "Роботизированная сварка", category: "Сварка", keywords: "welding-robot" },
+    { id: 3, title: "Фрезерный станок ЧПУ", category: "ЧПУ Обработка", keywords: "cnc-milling" },
+    { id: 4, title: "Плазменный резак", category: "Плазменная резка", keywords: "plasma-cutter" },
+    { id: 5, title: "Инженерный контроль", category: "Инжиниринг", keywords: "engineer-tablet" },
+    { id: 6, title: "Токарная обработка", category: "Токарные работы", keywords: "lathe-metal" },
+    { id: 7, title: "Сварка TIG", category: "Ручная сварка", keywords: "tig-welding" },
+    { id: 8, title: "3D Печать металлом", category: "Аддитивные технологии", keywords: "3d-printing-metal" },
+    { id: 9, title: "Гидравлический пресс", category: "Штамповка", keywords: "hydraulic-press" },
+    { id: 10, title: "Лазерная гравировка", category: "Маркировка", keywords: "laser-engraving" },
+    { id: 11, title: "Сборочная линия", category: "Производство", keywords: "assembly-line" },
+    { id: 12, title: "Шлифовка деталей", category: "Финишная обработка", keywords: "metal-grinding" },
+    { id: 13, title: "Промышленные искры", category: "Эстетика", keywords: "sparks-factory" },
+    { id: 14, title: "ЧПУ Пульт управления", category: "Электроника", keywords: "cnc-control-panel" },
+    { id: 15, title: "Резка нержавейки", category: "Материалы", keywords: "stainless-steel" },
+    { id: 16, title: "Сварочный шов", category: "Контроль качества", keywords: "weld-seam" },
+    { id: 17, title: "Автоматизация цеха", category: "Industry 4.0", keywords: "smart-factory" },
+    { id: 18, title: "Гибка металла", category: "Листообработка", keywords: "metal-bending" },
+    { id: 19, title: "Труборезный станок", category: "Резка труб", keywords: "pipe-cutting" },
+    { id: 20, title: "Защитная экипировка", category: "Безопасность", keywords: "welding-mask" },
+];
+
+const galleryContainer = document.getElementById('gallery');
+const modal = document.getElementById('modal');
+const modalImg = document.getElementById('modal-img');
+const modalTitle = document.getElementById('modal-title');
+const modalDesc = document.getElementById('modal-desc');
+const modalBadge = document.getElementById('modal-badge');
+const closeBtn = document.querySelector('.close-btn');
+
+// 2. Функция создания карточек
+function renderGallery() {
+    galleryData.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        
+        // Создаем случайный URL картинки. В реальном проекте используйте свои пути к файлам.
+        // Используем сервис Unsplash Source для демо
+        const imgUrl = `https://source.unsplash.com/600x400/?${item.keywords},industrial&sig=${item.id}`;
+
+        card.innerHTML = `
+            <div class="card-image-wrapper">
+                <img src="${imgUrl}" loading="lazy" alt="${item.title}"> 
+            </div>
+            <div class="card-info">
+                <div class="card-category">${item.category}</div>
+                <h3 class="card-title">${item.title}</h3>
+            </div>
+        `;
+
+        const imgElement = card.querySelector('img');
+
+        // 3. Обработчик клика (открытие модального окна)
+        card.addEventListener('click', () => {
+            openModal(item, imgElement.src);
+        });
+
+        galleryContainer.appendChild(card);
+    });
+}
+
+// 4. Логика Модального окна
+function openModal(item, currentImageSrc) {
+    modalImg.src = currentImageSrc; 
+    modalTitle.textContent = item.title;
+    modalBadge.textContent = item.category;
+    
+    // Генерируем описание
+    modalDesc.innerHTML = `
+        Это высокотехнологичное оборудование категории <b>"${item.category}"</b>.<br><br>
+        Идеально подходит для выполнения сложных производственных задач. 
+        Включает в себя современные системы управления и обеспечивает высокую точность 
+        (до 0.01 мм). <br><br>
+        <i>ID товара: #${item.id} | Статус: В наличии</i>
+    `;
+    
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden'; // Блокируем прокрутку фона
+}
+
+function closeModal() {
+    modal.classList.remove('show');
+    document.body.style.overflow = ''; // Возвращаем прокрутку
+}
+
+// События закрытия
+closeBtn.addEventListener('click', closeModal);
+
+window.addEventListener('click', (e) => {
+    if (e.target == modal) {
+        closeModal();
+    }
+});
+
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+});
+
+// Запуск
+document.addEventListener('DOMContentLoaded', renderGallery);

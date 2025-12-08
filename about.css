@@ -1,0 +1,341 @@
+/* --- Основные настройки --- */
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --text-light: #ecf0f1;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --modal-overlay: rgba(0, 0, 0, 0.85);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #ecf0f1;
+    color: var(--text-light);
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+p.subtitle {
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* --- Сетка галереи --- */
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    backdrop-filter: blur(5px);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.card-image-wrapper {
+    height: 200px;
+    overflow: hidden;
+    background: #000;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card-info {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    margin: 0 0 5px 0;
+    font-weight: 600;
+}
+
+.card-category {
+    font-size: 0.8rem;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Модальное окно (Lightbox) --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--modal-overlay);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background: rgba(40, 44, 52, 0.95);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    position: relative;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.9);}
+    to {transform: scale(1);}
+}
+
+.modal-image-box {
+    flex: 1.5;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 80vh;
+}
+
+.modal-text-box {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 1px solid var(--glass-border);
+}
+
+.modal-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    background: -webkit-linear-gradient(#eee, #999);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.modal-badge {
+    display: inline-block;
+    background: var(--accent-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    width: fit-content;
+    margin-bottom: 20px;
+}
+
+.modal-desc {
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.modal-btn {
+    padding: 12px 24px;
+    background: transparent;
+    border: 1px solid var(--text-light);
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 5px;
+    font-weight: 600;
+    width: fit-content;
+}
+
+.modal-btn:hover {
+    background: var(--text-light);
+    color: #000;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: var(--accent-color);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .modal-content {
+        flex-direction: column;
+        width: 95%;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    .modal-image-box {
+        flex: none;
+        height: 250px;
+    }
+    .modal-text-box {
+        padding: 20px;
+    }
+    .modal-title {
+        font-size: 1.5rem;
+    }
+}
+
+.header {
+  background: #393a3a;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: white;
+}
+
+.logo {
+  width: 60px;
+}
+
+.logo-icon {
+  width: 24px;
+  height: 24px;
+  color: #3498db;
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.subtitle {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #3498db;
+}
+
+.quote-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.quote-btn:hover {
+  background: #7f8c8d;
+}
+
+.header {
+  background: #393a3a;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: white;
+}
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+}

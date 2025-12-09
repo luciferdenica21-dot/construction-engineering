@@ -16,14 +16,26 @@
                 <img src="img/логотип.png" alt="logo" class="logo">
                 <span class="brand-name">Konnektor</span>
             </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Главная страница</a></li>
-                <li><a href="#" class="nav-link">УСЛОВИЯ</a></li>
-                <li><a href="#" class="nav-link">УСЛУГИ</a></li>
-                <li><a href="#" class="nav-link">КОНТАКТЫ</a></li>
-                <li><a href="#" class="nav-link">ВОЙТИ</a></li>
+            <div class="menu-toggle" id="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">ГЛАВНАЯ</a></li>
+                <li><a href="index.html#services" class="nav-link">УСЛУГИ</a></li>
+                <li><a href="about.html" class="nav-link">КАТАЛОГ</a></li>
+                <li><a href="index.html#contacts" class="nav-link">КОНТАКТЫ</a></li>
             </ul>
-            <button class="quote-btn"><a href="">Связаться</a></button>
+            <button class="cta-btn">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"
+                        stroke-linejoin="round" />
+                </svg>
+                <a href="index.html#contacts">
+                    Напишите нам и получите консультацию
+                </a>
+            </button>
         </nav>
     </header>
 

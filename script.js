@@ -100,3 +100,50 @@ window.addEventListener('keydown', (e) => {
 
 // Запуск
 document.addEventListener('DOMContentLoaded', renderGallery);
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Получаем элементы
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    // 2. Добавляем обработчик клика на иконку
+    menuToggle.addEventListener('click', () => {
+        // Переключаем класс 'active' для списка ссылок
+        navMenu.classList.toggle('active');
+        
+        // По желанию, можно добавить класс для анимации самой иконки бургера
+        menuToggle.classList.toggle('is-open'); 
+    });
+    
+    // --- Дополнительно: Закрытие модального окна (ваш код для галереи) ---
+    const modal = document.getElementById('modal');
+    const closeBtn = document.querySelector('.close-btn');
+
+    // Функция закрытия модального окна
+    const closeModal = () => {
+        modal.classList.remove('show');
+        // Добавьте задержку, чтобы анимация успела отработать, затем скрывайте display: none
+        setTimeout(() => {
+            modal.style.display = 'none';
+        }, 300);
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+
+    // Закрытие при клике вне контента модального окна
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+    
+    // Закрытие по клавише ESC
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
+
+    // --- Ваш существующий или будущий код для открытия галереи должен быть здесь ---
+    // Здесь вы добавите код, который ищет карточки и вызывает modal.classList.add('show');
+});

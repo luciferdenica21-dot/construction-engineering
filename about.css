@@ -8,6 +8,12 @@
     --modal-overlay: rgba(0, 0, 0, 0.85);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -28,10 +34,6 @@ h1 {
     margin-bottom: 10px;
 }
 
-p.subtitle {
-    opacity: 0.7;
-    font-size: 0.9rem;
-}
 
 /* --- Сетка галереи --- */
 .gallery-container {
@@ -239,13 +241,7 @@ p.subtitle {
     }
 }
 
-.header {
-  background: #393a3a;
-  padding: 1rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
+
 
 .nav {
   max-width: 1400px;
@@ -261,10 +257,16 @@ p.subtitle {
   align-items: center;
   gap: 0.3rem;
   color: white;
+
+}
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
 }
 
 .logo {
-  width: 60px;
+  width: 80px;
 }
 
 .logo-icon {
@@ -311,6 +313,35 @@ p.subtitle {
 .quote-btn:hover {
   background: #7f8c8d;
 }
+.cta-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+a {
+  text-decoration: none;
+  list-style: none;
+  color: white;
+}
+.cta-btn:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+}
 
 .header {
   background: #393a3a;
@@ -337,7 +368,7 @@ p.subtitle {
 .nav-menu {
   display: flex;
   list-style: none;
-  gap: 3rem;
+  gap: 4rem;
 
 }
 
@@ -406,8 +437,7 @@ p.subtitle {
     }
 
     .cta-btn {
-        padding: 0.75rem 1.5rem;
-        font-size: 0.9rem;
+        display: none;
     }
 
     .process,
@@ -419,4 +449,97 @@ p.subtitle {
     .section-title {
         font-size: 1.5rem;
     }
+}
+
+/* --- Стили для Бургер-иконки (Menu Toggle) --- */
+.menu-toggle {
+    display: none; /* Скрываем по умолчанию на широких экранах */
+    cursor: pointer;
+    padding: 10px;
+    z-index: 150; /* Должен быть выше, чем nav-menu, чтобы ловить клик */
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: var(--text-light); /* #ecf0f1 */
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- Стили для кнопки "Связаться" --- */
+/* Скрываем кнопку на мобильных, чтобы она не мешала бургеру */
+@media (max-width: 768px) {
+    .quote-btn {
+        display: none;
+    }
+}
+
+/* Адаптивность для мобильных устройств (менее 768px) */
+@media (max-width: 768px) {
+    
+    /* 1. Навигационная панель */
+    .nav {
+        /* Меняем навигацию с flex-direction: column на стандартное
+           расположение элементов по углам: Логотип слева, Бургер справа */
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+    }
+
+    /* 2. Показываем иконку бургера */
+    .menu-toggle {
+        display: block; 
+    }
+
+    /* 3. Скрываем меню по умолчанию */
+    .nav-menu {
+        display: none; /* Скрываем список ссылок */
+        flex-direction: column; /* Элементы в столбец */
+        
+        /* Позиционируем меню для выпадающего эффекта */
+        position: absolute;
+        top: 65px; /* Смещаем под заголовок */
+        left: 0;
+        width: 100%;
+        background: #393a3a; /* Фон должен совпадать с header */
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        
+        /* Удаляем фиксированные gap и центрируем текст */
+        gap: 0; 
+        text-align: center;
+    }
+    
+    /* 4. Стиль для открытого меню (JS будет добавлять класс 'active') */
+    .nav-menu.active {
+        display: flex; /* Показываем меню, когда класс active добавлен */
+    }
+
+    /* 5. Стиль ссылок в мобильном меню */
+    .nav-menu li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .nav-link {
+        padding: 15px 0;
+        display: block; /* Занимает всю ширину элемента списка */
+    }
+
+    /* Добавьте сюда ваши остальные мобильные адаптации */
+    .hero-title, .section-title, .process-steps, .services-grid, .benefits-grid, .footer-content, .footer-info, .social-links {
+        /* ... оставьте ваши стили из запроса */
+    }
+}
+/* Стили для анимации крестика */
+.menu-toggle.is-open .bar:nth-child(2) {
+    opacity: 0; /* Скрываем среднюю линию */
+}
+
+.menu-toggle.is-open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg); /* Поворот верхней линии */
+}
+
+.menu-toggle.is-open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg); /* Поворот нижней линии */
 }

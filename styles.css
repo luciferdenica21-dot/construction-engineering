@@ -1,397 +1,750 @@
-<!DOCTYPE html>
-<html lang="ru">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Konnektor</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-
-  <body>
-
-    <body>
-      <header class="header">
-        <nav class="nav">
-          <div class="nav-brand">
-            <img src="img/logo.png" alt="logo" class="logo">
-            <span class="brand-name">Connector</span>
-          </div>
-          <div class="menu-toggle" id="menu-toggle">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-          </div>
-          <ul class="nav-menu" id="nav-menu">
-            <li><a href="index.html" class="nav-link">ГЛАВНАЯ</a></li>
-            <li><a href="index.html#services" class="nav-link">УСЛУГИ</a></li>
-            <li><a href="about.html" class="nav-link">КАТАЛОГ</a></li>
-            <li><a href="index.html#contacts" class="nav-link">КОНТАКТЫ</a></li>
-          </ul>
-          <button class="cta-btn">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
-            </svg>
-            <a href="index.html#contacts">
-              Напишите нам и получите консультацию
-            </a>
-          </button>
-        </nav>
-      </header>
-
-      <main>
-        <section class="hero">
-          <div class="hero-content">
-            <h1 class="hero-title">KONNEKTOR: </h1>
-            <h2 class="hero-subtitle">ПРОМЫШЛЕННОЕ КАЧЕСТВО ДЛЯ ВАШИХ ИДЕЙ</h2>
-          </div>
-          <div class="hero-image">
-            <div class="hero-bg-left">
-            </div>
-            <div class="hero-bg-right">
-              <video src="img/videofon.mp4" autoplay muted loop playsinline></video>
-            </div>
-          </div>
-        </section>
-
-        <section class="ideas" id="ideas">
-          <div class="hero-content">
-            <h2 class="ideas-title">Идеи заслуживают воплощения!</h2>
-            <div class="ideas-text">
-              <p>Нужны уникальные детали, аксессуары для интерьера или кастомные изделия для бизнеса?
-                С Konnektor реализовать любой, даже самый необычный проект, стало просто.
-                Мы берем на себя все: от разработки технологии до размещения заказа на лучших производственных площадках
-                Грузии.
-              </p>
-
-            </div>
-          </div>
-
-        </section>
-
-        <section class="process" id="process">
-          <h2 class="section-title">ВАША ИДЕЯ В 4 ШАГА</h2>
-          <div class="process-steps">
-            <div class="step">
-              <div class="step-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                </svg>
-              </div>
-              <h3 class="step-title">Загрузите свой эскиз, проект или рисунок.</h3>
-            </div>
-            <div class="step">
-              <div class="step-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
-                  <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                </svg>
-              </div>
-              <h3 class="step-title">Получите профессиональную консультацию и расчет стоимости.</h3>
-            </div>
-            <div class="step">
-              <div class="step-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" />
-                  <path
-                    d="M19.4 15C19.2669 15.3016 19.2272 15.6362 19.286 15.9606C19.3448 16.285 19.4995 16.5842 19.73 16.82L19.79 16.88C19.976 17.0657 20.1235 17.2863 20.2241 17.5291C20.3248 17.7719 20.3766 18.0322 20.3766 18.295C20.3766 18.5578 20.3248 18.8181 20.2241 19.0609C20.1235 19.3037 19.976 19.5243 19.79 19.71C19.6043 19.896 19.3837 20.0435 19.1409 20.1441C18.8981 20.2448 18.6378 20.2966 18.375 20.2966C18.1122 20.2966 17.8519 20.2448 17.6091 20.1441C17.3663 20.0435 17.1457 19.896 16.96 19.71L16.9 19.65C16.6642 19.4195 16.365 19.2648 16.0406 19.206C15.7162 19.1472 15.3816 19.1869 15.08 19.32C14.7842 19.4468 14.532 19.6572 14.3543 19.9255C14.1766 20.1938 14.0813 20.5082 14.08 20.83V21C14.08 21.5304 13.8693 22.0391 13.4942 22.4142C13.1191 22.7893 12.6104 23 12.08 23C11.5496 23 11.0409 22.7893 10.6658 22.4142C10.2907 22.0391 10.08 21.5304 10.08 21V20.91C10.0723 20.579 9.96512 20.2573 9.77251 19.9887C9.5799 19.7201 9.31074 19.5176 9 19.41C8.69838 19.2769 8.36381 19.2372 8.03941 19.296C7.71502 19.3548 7.41568 19.5095 7.18 19.74L7.12 19.8C6.93425 19.986 6.71368 20.1335 6.47088 20.2341C6.22808 20.3348 5.96783 20.3866 5.705 20.3866C5.44217 20.3866 5.18192 20.3348 4.93912 20.2341C4.69632 20.1335 4.47575 19.986 4.29 19.8C4.10405 19.6143 3.95653 19.3937 3.85588 19.1509C3.75523 18.9081 3.70343 18.6478 3.70343 18.385C3.70343 18.1222 3.75523 17.8619 3.85588 17.6191C3.95653 17.3763 4.10405 17.1557 4.29 16.97L4.35 16.91C4.58054 16.6742 4.73519 16.375 4.794 16.0506C4.85282 15.7262 4.81312 15.3916 4.68 15.09C4.55324 14.7942 4.34276 14.542 4.07447 14.3643C3.80618 14.1866 3.49179 14.0913 3.17 14.09H3C2.46957 14.09 1.96086 13.8793 1.58579 13.5042C1.21071 13.1291 1 12.6204 1 12.09C1 11.5596 1.21071 11.0509 1.58579 10.6758C1.96086 10.3007 2.46957 10.09 3 10.09H3.09C3.42099 10.0823 3.742 9.97512 4.01062 9.78251C4.27925 9.5899 4.48167 9.32074 4.59 9.01C4.72312 8.70838 4.76282 8.37381 4.704 8.04941C4.64519 7.72502 4.49054 7.42568 4.26 7.19L4.2 7.13C4.01405 6.94425 3.86653 6.72368 3.76588 6.48088C3.66523 6.23808 3.61343 5.97783 3.61343 5.715C3.61343 5.45217 3.66523 5.19192 3.76588 4.94912C3.86653 4.70632 4.01405 4.48575 4.2 4.3C4.38575 4.11405 4.60632 3.96653 4.84912 3.86588C5.09192 3.76523 5.35217 3.71343 5.615 3.71343C5.87783 3.71343 6.13808 3.76523 6.38088 3.86588C6.62368 3.96653 6.84425 4.11405 7.03 4.3L7.09 4.36C7.32568 4.59054 7.62502 4.74519 7.94941 4.804C8.27381 4.86282 8.60838 4.82312 8.91 4.69H9C9.29577 4.56324 9.54802 4.35276 9.72569 4.08447C9.90337 3.81618 9.99872 3.50179 10 3.18V3C10 2.46957 10.2107 1.96086 10.5858 1.58579C10.9609 1.21071 11.4696 1 12 1C12.5304 1 13.0391 1.21071 13.4142 1.58579C13.7893 1.96086 14 2.46957 14 3V3.09C14.0013 3.41179 14.0966 3.72618 14.2743 3.99447C14.452 4.26276 14.7042 4.47324 15 4.6C15.3016 4.73312 15.6362 4.77282 15.9606 4.714C16.285 4.65519 16.5842 4.50054 16.82 4.27L16.88 4.21C17.0657 4.02405 17.2863 3.87653 17.5291 3.77588C17.7719 3.67523 18.0322 3.62343 18.295 3.62343C18.5578 3.62343 18.8181 3.67523 19.0609 3.77588C19.3037 3.87653 19.5243 4.02405 19.71 4.21C19.896 4.39575 20.0435 4.61632 20.1441 4.85912C20.2448 5.10192 20.2966 5.36217 20.2966 5.625C20.2966 5.88783 20.2448 6.14808 20.1441 6.39088C20.0435 6.63368 19.896 6.85425 19.71 7.04L19.65 7.1C19.4195 7.33568 19.2648 7.63502 19.206 7.95941C19.1472 8.28381 19.1869 8.61838 19.32 8.92V9C19.4468 9.29577 19.6572 9.54802 19.9255 9.72569C20.1938 9.90337 20.5082 9.99872 20.83 10H21C21.5304 10 22.0391 10.2107 22.4142 10.5858C22.7893 10.9609 23 11.4696 23 12C23 12.5304 22.7893 13.0391 22.4142 13.4142C22.0391 13.7893 21.5304 14 21 14H20.91C20.5882 14.0013 20.2738 14.0966 20.0055 14.2743C19.7372 14.452 19.5268 14.7042 19.4 15Z"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </div>
-              <h3 class="step-title">Подпишите онлайн договор на услуги.</h3>
-            </div>
-            <div class="step">
-              <div class="step-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="1" y="3" width="15" height="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                  <path d="M16 8L20 12L16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                  <path d="M21 12H9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                </svg>
-              </div>
-              <h3 class="step-title">Заберите готовый заказ или воспользуйтесь нашей доставкой.</h3>
-            </div>
-          </div>
-        </section>
-
-
-
-        <section class="services" id="services">
-          <h2 class="section-title">КАКИЕ ЗАДАЧИ МЫ РЕШАЕМ?</h2>
-          <div class="services-grid">
-            <div class="service-card">
-              <img src="gallery/Лазерная резка металлов.jpg" width="975" height="650" alt="Лазерная резка металлов"
-                class="service-image">
-              <h3 class="service-title">Лазерная резка металлов</h3>
-            </div>
-            <div class="service-card">
-              <img src="gallery/Лазерная резка неметаллических материалов.jpg" width="963" height="650"
-                alt="ЧПУ-Обработка" class="service-image">
-              <h3 class="service-title">Лазерная резка неметаллических материалов</h3>
-            </div>
-            <div class="service-card">
-              <img src="gallery/Лазерная гравировка.jpg" width="975" height="650" alt="ЧПУ Обработка Рамки"
-                class="service-image">
-              <h3 class="service-title">Лазерная гравировка</h3>
-            </div>
-            <div class="service-card">
-              <img src="gallery/ЧПУ фрезеровка и раскрой листовых материалов.jpg" width="650" height="650"
-                alt="ЧПУ фрезеровка и раскрой листовых материалов" class="service-image">
-              <h3 class="service-title">ЧПУ фрезеровка и раскрой листовых материалов</h3>
-            </div>
-            <div class="service-card">
-              <img src="gallery/Порошковая окраска.jpg" width="650" height="650" alt="Порошковая окраска"
-                class="service-image">
-              <h3 class="service-title">Порошковая окраска</h3>
-            </div>
-            <div class="service-card">
-              <img src="gallery/Жидкостная окраска.jpg" width="650" height="650" alt="Жидкостная окраска"
-                class="service-image">
-              <h3 class="service-title">Жидкостная окраска</h3>
-            </div>
-            <div class="service-card">
-              <img src="gallery/Токарные работы.jpg" width="650" height="650" alt="Токарные работы"
-                class="service-image">
-              <h3 class="service-title">Токарные работы</h3>
-            </div>
-            <div class="service-card">
-              <img src="gallery/Гибочные работы по металлам.jpg" width="650" height="650"
-                alt="Гибочные работы по металлам" class="service-image">
-              <h3 class="service-title">Гибочные работы по металлам</h3>
-            </div>
-            <div class="service-card">
-              <img src="gallery/Сварка.jpg" width="650" height="650" alt="Сварка" class="service-image">
-              <h3 class="service-title">Сварка</h3>
-            </div>
-            <div class="service-card">
-              <img src="gallery/Продажа материалов.jpg" width="650" height="650" alt="Продажа материалов"
-                class="service-image">
-              <h3 class="service-title">Продажа материалов</h3>
-            </div>
-
-          </div>
-
-        </section>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #ecf0f1;
+    color: var(--text-light);
+    min-height: 100vh;
+}
 
 
 
 
-        <section class="benefits">
-          <h2 class="section-title">ПОЧЕМУ KONNEKTOR?</h2>
-          <div class="benefits-grid">
-            <div class="benefit-card">
-              <div class="benefit-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                  <path
-                    d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-                    stroke="currentColor" stroke-width="2" />
-                </svg>
-              </div>
-              <h3 class="benefit-title">100% Гарантия качества</h3>
-              <button class="benefit-btn">Нам доверяют</button>
-            </div>
-            <div class="benefit-card">
-              <div class="benefit-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2" />
-                  <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2" />
-                  <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2" />
-                  <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2" />
-                </svg>
-              </div>
-              <h3 class="benefit-title">Правильное Ценообразование</h3>
-              <button class="benefit-btn">Подсчитать все услуги</button>
-            </div>
-            <div class="benefit-card">
-              <div class="benefit-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" />
-                </svg>
-              </div>
-              <h3 class="benefit-title">Диалог с к B2B-Монисты</h3>
-              <button class="benefit-btn">Подсчитать все услуги</button>
-            </div>
-            <div class="benefit-card">
-              <div class="benefit-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" />
-                  <path
-                    d="M19.4 15C19.2669 15.3016 19.2272 15.6362 19.286 15.9606C19.3448 16.285 19.4995 16.5842 19.73 16.82L19.79 16.88C19.976 17.0657 20.1235 17.2863 20.2241 17.5291C20.3248 17.7719 20.3766 18.0322 20.3766 18.295C20.3766 18.5578 20.3248 18.8181 20.2241 19.0609C20.1235 19.3037 19.976 19.5243 19.79 19.71C19.6043 19.896 19.3837 20.0435 19.1409 20.1441C18.8981 20.2448 18.6378 20.2966 18.375 20.2966C18.1122 20.2966 17.8519 20.2448 17.6091 20.1441C17.3663 20.0435 17.1457 19.896 16.96 19.71L16.9 19.65C16.6642 19.4195 16.365 19.2648 16.0406 19.206C15.7162 19.1472 15.3816 19.1869 15.08 19.32C14.7842 19.4468 14.532 19.6572 14.3543 19.9255C14.1766 20.1938 14.0813 20.5082 14.08 20.83V21C14.08 21.5304 13.8693 22.0391 13.4942 22.4142C13.1191 22.7893 12.6104 23 12.08 23C11.5496 23 11.0409 22.7893 10.6658 22.4142C10.2907 22.0391 10.08 21.5304 10.08 21V20.91C10.0723 20.579 9.96512 20.2573 9.77251 19.9887C9.5799 19.7201 9.31074 19.5176 9 19.41C8.69838 19.2769 8.36381 19.2372 8.03941 19.296C7.71502 19.3548 7.41568 19.5095 7.18 19.74L7.12 19.8C6.93425 19.986 6.71368 20.1335 6.47088 20.2341C6.22808 20.3348 5.96783 20.3866 5.705 20.3866C5.44217 20.3866 5.18192 20.3348 4.93912 20.2341C4.69632 20.1335 4.47575 19.986 4.29 19.8C4.10405 19.6143 3.95653 19.3937 3.85588 19.1509C3.75523 18.9081 3.70343 18.6478 3.70343 18.385C3.70343 18.1222 3.75523 17.8619 3.85588 17.6191C3.95653 17.3763 4.10405 17.1557 4.29 16.97L4.35 16.91C4.58054 16.6742 4.73519 16.375 4.794 16.0506C4.85282 15.7262 4.81312 15.3916 4.68 15.09C4.55324 14.7942 4.34276 14.542 4.07447 14.3643C3.80618 14.1866 3.49179 14.0913 3.17 14.09H3C2.46957 14.09 1.96086 13.8793 1.58579 13.5042C1.21071 13.1291 1 12.6204 1 12.09C1 11.5596 1.21071 11.0509 1.58579 10.6758C1.96086 10.3007 2.46957 10.09 3 10.09H3.09C3.42099 10.0823 3.742 9.97512 4.01062 9.78251C4.27925 9.5899 4.48167 9.32074 4.59 9.01C4.72312 8.70838 4.76282 8.37381 4.704 8.04941C4.64519 7.72502 4.49054 7.42568 4.26 7.19L4.2 7.13C4.01405 6.94425 3.86653 6.72368 3.76588 6.48088C3.66523 6.23808 3.61343 5.97783 3.61343 5.715C3.61343 5.45217 3.66523 5.19192 3.76588 4.94912C3.86653 4.70632 4.01405 4.48575 4.2 4.3C4.38575 4.11405 4.60632 3.96653 4.84912 3.86588C5.09192 3.76523 5.35217 3.71343 5.615 3.71343C5.87783 3.71343 6.13808 3.76523 6.38088 3.86588C6.62368 3.96653 6.84425 4.11405 7.03 4.3L7.09 4.36C7.32568 4.59054 7.62502 4.74519 7.94941 4.804C8.27381 4.86282 8.60838 4.82312 8.91 4.69H9C9.29577 4.56324 9.54802 4.35276 9.72569 4.08447C9.90337 3.81618 9.99872 3.50179 10 3.18V3C10 2.46957 10.2107 1.96086 10.5858 1.58579C10.9609 1.21071 11.4696 1 12 1C12.5304 1 13.0391 1.21071 13.4142 1.58579C13.7893 1.96086 14 2.46957 14 3V3.09C14.0013 3.41179 14.0966 3.72618 14.2743 3.99447C14.452 4.26276 14.7042 4.47324 15 4.6C15.3016 4.73312 15.6362 4.77282 15.9606 4.714C16.285 4.65519 16.5842 4.50054 16.82 4.27L16.88 4.21C17.0657 4.02405 17.2863 3.87653 17.5291 3.77588C17.7719 3.67523 18.0322 3.62343 18.295 3.62343C18.5578 3.62343 18.8181 3.67523 19.0609 3.77588C19.3037 3.87653 19.5243 4.02405 19.71 4.21C19.896 4.39575 20.0435 4.61632 20.1441 4.85912C20.2448 5.10192 20.2966 5.36217 20.2966 5.625C20.2966 5.88783 20.2448 6.14808 20.1441 6.39088C20.0435 6.63368 19.896 6.85425 19.71 7.04L19.65 7.1C19.4195 7.33568 19.2648 7.63502 19.206 7.95941C19.1472 8.28381 19.1869 8.61838 19.32 8.92V9C19.4468 9.29577 19.6572 9.54802 19.9255 9.72569C20.1938 9.90337 20.5082 9.99872 20.83 10H21C21.5304 10 22.0391 10.2107 22.4142 10.5858C22.7893 10.9609 23 11.4696 23 12C23 12.5304 22.7893 13.0391 22.4142 13.4142C22.0391 13.7893 21.5304 14 21 14H20.91C20.5882 14.0013 20.2738 14.0966 20.0055 14.2743C19.7372 14.452 19.5268 14.7042 19.4 15Z"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </div>
-              <h3 class="benefit-title">Непрерывные Заявки для Бизнеса</h3>
-              <button class="benefit-btn">Подсчитать все услуги</button>
-            </div>
-          </div>
-        </section>
 
-      </main>
+/* Header */
 
-      <section class="contacts">
 
-        <!-- способы для связи -->
-        <div class="contact-container">
-          <section class="connection" id="contacts">
-            <div class="contact-card" data-contact-value="@my_telegram_handle">
-              <div class="icon-wrapper telegram-bg">
-                <svg width="100px" height="100px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <circle cx="16" cy="16" r="14" fill="url(#paint0_linear_87_7225)"></circle>
-                    <path
-                      d="M22.9866 10.2088C23.1112 9.40332 22.3454 8.76755 21.6292 9.082L7.36482 15.3448C6.85123 15.5703 6.8888 16.3483 7.42147 16.5179L10.3631 17.4547C10.9246 17.6335 11.5325 17.541 12.0228 17.2023L18.655 12.6203C18.855 12.4821 19.073 12.7665 18.9021 12.9426L14.1281 17.8646C13.665 18.3421 13.7569 19.1512 14.314 19.5005L19.659 22.8523C20.2585 23.2282 21.0297 22.8506 21.1418 22.1261L22.9866 10.2088Z"
-                      fill="white"></path>
-                    <defs>
-                      <linearGradient id="paint0_linear_87_7225" x1="16" y1="2" x2="16" y2="30"
-                        gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#37BBFE"></stop>
-                        <stop offset="1" stop-color="#007DBB"></stop>
-                      </linearGradient>
-                    </defs>
-                  </g>
-                </svg>
-              </div>
-              <div class="contact-info">
-                <span class="contact-type">Telegram</span>
-                <span class="contact-detail"></span>
-              </div>
-              <button class="copy-btn"><a href="https://t.me/MichaelPiliaev" target="_blank">Написать</a></button>
-            </div>
+.nav {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
 
-            <div class="contact-card" data-contact-value="+1234567890">
-              <div class="icon-wrapper whatsapp-bg">
-                <svg width="64px" height="64px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <title>Whatsapp-color</title>
-                    <desc>Created with Sketch.</desc>
-                    <defs> </defs>
-                    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                      <g id="Color-" transform="translate(-700.000000, -360.000000)" fill="#67C15E">
-                        <path
-                          d="M723.993033,360 C710.762252,360 700,370.765287 700,383.999801 C700,389.248451 701.692661,394.116025 704.570026,398.066947 L701.579605,406.983798 L710.804449,404.035539 C714.598605,406.546975 719.126434,408 724.006967,408 C737.237748,408 748,397.234315 748,384.000199 C748,370.765685 737.237748,360.000398 724.006967,360.000398 L723.993033,360.000398 L723.993033,360 Z M717.29285,372.190836 C716.827488,371.07628 716.474784,371.034071 715.769774,371.005401 C715.529728,370.991464 715.262214,370.977527 714.96564,370.977527 C714.04845,370.977527 713.089462,371.245514 712.511043,371.838033 C711.806033,372.557577 710.056843,374.23638 710.056843,377.679202 C710.056843,381.122023 712.567571,384.451756 712.905944,384.917648 C713.258648,385.382743 717.800808,392.55031 724.853297,395.471492 C730.368379,397.757149 732.00491,397.545307 733.260074,397.27732 C735.093658,396.882308 737.393002,395.527239 737.971421,393.891043 C738.54984,392.25405 738.54984,390.857171 738.380255,390.560912 C738.211068,390.264652 737.745308,390.095816 737.040298,389.742615 C736.335288,389.389811 732.90737,387.696673 732.25849,387.470894 C731.623543,387.231179 731.017259,387.315995 730.537963,387.99333 C729.860819,388.938653 729.198006,389.89831 728.661785,390.476494 C728.238619,390.928051 727.547144,390.984595 726.969123,390.744481 C726.193254,390.420348 724.021298,389.657798 721.340985,387.273388 C719.267356,385.42535 717.856938,383.125756 717.448104,382.434484 C717.038871,381.729275 717.405907,381.319529 717.729948,380.938852 C718.082653,380.501232 718.421026,380.191036 718.77373,379.781688 C719.126434,379.372738 719.323884,379.160897 719.549599,378.681068 C719.789645,378.215575 719.62006,377.735746 719.450874,377.382942 C719.281687,377.030139 717.871269,373.587317 717.29285,372.190836 Z"
-                          id="Whatsapp"> </path>
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-              </div>
-              <div class="contact-info">
-                <span class="contact-type">WhatsApp</span>
-              </div>
-              <button class="copy-btn"><a href="https://wa.me/+995593450833" target="_blank">Написать</a></button>
-            </div>
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: white;
 
-            <div class="contact-card" data-contact-value="my.email@gmail.com">
-              <div class="icon-wrapper gmail-bg">
-                <svg xmlns="http://www.w3.org/2000/svg" aria-label="Gmail" role="img" viewBox="0 0 512 512" width="64px"
-                  height="64px" fill="#000000">
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <rect width="512" height="512" rx="15%" fill="#ffffff"></rect>
-                    <path d="M158 391v-142l-82-63V361q0 30 30 30" fill="#4285f4"></path>
-                    <path d="M 154 248l102 77l102-77v-98l-102 77l-102-77" fill="#ea4335"></path>
-                    <path d="M354 391v-142l82-63V361q0 30-30 30" fill="#34a853"></path>
-                    <path d="M76 188l82 63v-98l-30-23c-27-21-52 0-52 26" fill="#c5221f"></path>
-                    <path d="M436 188l-82 63v-98l30-23c27-21 52 0 52 26" fill="#fbbc04"></path>
-                  </g>
-                </svg>
-              </div>
-              <div class="contact-info">
-                <span class="contact-type">GMail</span>
-              </div>
-              <button class="copy-btn"><a href="https://mail.google.com/" target="_blank">Написать</a></button>
-            </div>
+}
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 4rem;
+}
 
-            <div class="contact-card" data-contact-value="my_facebook_page_link">
-              <div class="icon-wrapper facebook-bg">
-                <svg width="64px" height="64px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <title>Facebook-color</title>
-                    <desc>Created with Sketch.</desc>
-                    <defs> </defs>
-                    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                      <g id="Color-" transform="translate(-200.000000, -160.000000)" fill="#4460A0">
-                        <path
-                          d="M225.638355,208 L202.649232,208 C201.185673,208 200,206.813592 200,205.350603 L200,162.649211 C200,161.18585 201.185859,160 202.649232,160 L245.350955,160 C246.813955,160 248,161.18585 248,162.649211 L248,205.350603 C248,206.813778 246.813769,208 245.350955,208 L233.119305,208 L233.119305,189.411755 L239.358521,189.411755 L240.292755,182.167586 L233.119305,182.167586 L233.119305,177.542641 C233.119305,175.445287 233.701712,174.01601 236.70929,174.01601 L240.545311,174.014333 L240.545311,167.535091 C239.881886,167.446808 237.604784,167.24957 234.955552,167.24957 C229.424834,167.24957 225.638355,170.625526 225.638355,176.825209 L225.638355,182.167586 L219.383122,182.167586 L219.383122,189.411755 L225.638355,189.411755 L225.638355,208 L225.638355,208 Z"
-                          id="Facebook"> </path>
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-              </div>
-              <div class="contact-info">
-                <span class="contact-type">Facebook</span>
-              </div>
-              <button class="copy-btn"><a href="https://www.facebook.com/" target="_blank">Написать</a></button>
-            </div>
-          </section>
-        </div>
-        </div>
+.logo {
+  width: 80px;
+}
 
-        <footer class="footer">
-          <div class="footer-content">
-            <div class="footer-links">
-              <div class="footer-column">
-                <a href="#" class="footer-link">УСЛУГИ</a>
-                <a href="#" class="footer-link">ПОЛИТИКА</a>
-                <a href="#" class="footer-link">КОНТАКТЫ</a>
-              </div>
-            </div>
-            <div class="footer-info">
-              <p>Все - Производители! Сайт поставщиков Konnektor</p>
-              <div class="social-links">
-                <a href="#" class="social-link" aria-label="Facebook">
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                      d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                  </svg>
-                </a>
-                <a href="#" class="social-link" aria-label="Twitter">
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                      d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                  </svg>
-                </a>
-                <a href="#" class="social-link" aria-label="Instagram">
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                      d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987s11.987-5.367 11.987-11.987C24.014 5.367 18.647.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C4.198 14.895 3.708 13.744 3.708 12.447s.49-2.448 1.297-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.807.875 1.297 2.026 1.297 3.323s-.49 2.448-1.297 3.323c-.875.807-2.026 1.297-3.323 1.297zm7.718 0c-1.297 0-2.448-.49-3.323-1.297-.807-.875-1.297-2.026-1.297-3.323s.49-2.448 1.297-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.807.875 1.297 2.026 1.297 3.323s-.49 2.448-1.297 3.323c-.875.807-2.026 1.297-3.323 1.297z" />
-                  </svg>
-                </a>
-                <a href="#" class="social-link" aria-label="Telegram">
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                      d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </footer>
-        <script src="script.js"></script>
-    </body>
+.logo-icon {
+  width: 24px;
+  height: 24px;
+  color: #3498db;
+}
 
-</html>
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.subtitle {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #3498db;
+}
+
+.quote-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.quote-btn:hover {
+  background: #7f8c8d;
+}
+.cta-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+a {
+  text-decoration: none;
+  list-style: none;
+  color: white;
+}
+.cta-btn:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.header {
+  background: #393a3a;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: white;
+}
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+
+}
+
+
+a {
+  text-decoration: none;
+  list-style: none;
+  color: white;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #3498db;
+}
+
+.quote-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.quote-btn:hover {
+  background: #7f8c8d;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-title {
+  color: white;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 5rem;
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+.hero-subtitle {
+   color: white;
+  font-size: 3rem;
+  font-weight: normal;
+  margin-bottom: 5rem;
+  line-height: 1.3;
+  max-width: 600px;
+}
+
+.cta-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.cta-btn:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.hero-bg-lef {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f4f4f4" opacity="0.1"/><path d="M10 10h20v20H10zM40 10h20v20H40zM70 10h20v20H70zM10 40h20v20H10zM40 40h20v20H40zM70 40h20v20H70z" fill="%23fff" opacity="0.05"/></svg>') repeat;
+  opacity: 0.3;
+}
+
+.hero-bg-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 20%;
+}
+
+.ideas {
+  background: #ecf0f1;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 10pxpx;
+  margin-top: 20px;
+}
+
+.ideas-title {
+  color: rgb(0, 0, 0);
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+.ideas-title2 {
+  color: rgb(0, 0, 0);
+  font-size: rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+
+
+.ideas-text {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 5rem;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+
+/* Process Section */
+.process {
+  padding: 4rem 2rem;
+  background: #ecf0f1;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  color: #2c3e50;
+}
+
+.process-steps {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.step {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+}
+
+.step-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  color: #3498db;
+}
+
+.step-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.step-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.process-subtitle {
+  color: #7f8c8d;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+/* Services Section */
+.services {
+  padding: 4rem 2rem;
+  background: white;
+  text-align: center;
+}
+
+.services-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-title {
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Benefits Section */
+.benefits {
+  padding: 4rem 2rem;
+  background: #ecf0f1;
+  text-align: center;
+}
+
+.benefits-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.benefit-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+}
+
+.benefit-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  color: #3498db;
+}
+
+.benefit-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.benefit-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.benefit-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.benefit-btn:hover {
+  background: #2980b9;
+}
+
+/* Footer */
+.footer {
+  background: #2c3e50;
+  color: white;
+  padding: 2rem 0;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 3rem;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.footer-link {
+  color: #bdc3c7;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: white;
+}
+
+.footer-info {
+  text-align: right;
+}
+
+.footer-info p {
+  color: #bdc3c7;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-end;
+}
+
+.social-link {
+  color: #bdc3c7;
+  transition: color 0.3s;
+}
+
+.social-link:hover {
+  color: #3498db;
+}
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+
+
+
+/* CONTACT SECTION STYLES */
+
+.contact-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    margin: 0 auto; /* ИСПРАВЛЕНИЕ: Центрирует блок горизонтально */
+}
+
+.contact-header {
+    color: #333;
+    text-align;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-subtitle {
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1em;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contact-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.icon-wrapper {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    margin-right: 25px;
+}
+
+/* Цвета иконок */
+.telegram-bg { background-color: #ffffff; }
+.whatsapp-bg { background-color: #ffffff; }
+.gmail-bg    { background-color: #ffffff; }
+.facebook-bg { background-color: #ffffff; }
+
+.icon-wrapper svg {
+    width: 54px;
+    height: 54px;
+}
+
+.contact-info {
+    flex-grow: 1; /* ИСПРАВЛЕНИЕ: Исправлен синтаксис */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.contact-type {
+    font-weight: bold;
+    color: #333;
+    font-size: 1em;
+}
+
+.contact-detail {
+    color: #777;
+    font-size: 0.80em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Добавляет многоточие для длинных значений */
+}
+
+.copy-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    margin-left: 15px;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    flex-shrink: 0; /* Не дает кнопке сжиматься */
+}
+
+.copy-btn:hover {
+    background-color: #0056b3;
+}
+
+.copy-btn:active {
+    background-color: #004085;
+}
+
+.copy-btn.copied {
+    background-color: #28a745; /* Зеленый цвет после копирования */
+}
+
+.connection-flex {
+    box-sizing: border-box;
+    padding: 4rem 2rem;
+    background: #ecf0f1;
+    text-align: center;
+}
+/* Responsive Design */
+@media (max-width: 768px) 
+{
+     .nav {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .process-steps {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .services-grid,
+    .benefits-grid { /* ИСПРАВЛЕНИЕ: Удален лишний .connection-flex, который не является сеткой */
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .footer-info {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: 400px;
+    }
+
+    .hero-content {
+        padding: 2rem 1rem;
+    }
+
+    .ideas-title
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .cta-btn {
+        display: none;
+    }
+
+    .process,
+    .services,
+    .benefits {
+        padding: 2rem 1rem;
+    }
+    .ideas-title,
+    .section-title {
+        font-size: 1.5rem;
+    }
+}
+
+.menu-toggle {
+    display: none; /* Скрываем по умолчанию на широких экранах */
+    cursor: pointer;
+    padding: 10px;
+    z-index: 150; /* Должен быть выше, чем nav-menu, чтобы ловить клик */
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: var(--text-light); /* #ecf0f1 */
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}

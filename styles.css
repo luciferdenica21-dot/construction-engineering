@@ -749,6 +749,757 @@ a {
     transition: all 0.3s ease-in-out;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #ecf0f1;
+    color: var(--text-light);
+    min-height: 100vh;
+}
+
+
+
+
+
+/* Header */
+
+
+.nav {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: white;
+
+}
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 4rem;
+}
+
+.logo {
+  width: 80px;
+}
+
+.logo-icon {
+  width: 24px;
+  height: 24px;
+  color: #3498db;
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.subtitle {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #3498db;
+}
+
+.quote-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.quote-btn:hover {
+  background: #7f8c8d;
+}
+.cta-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+a {
+  text-decoration: none;
+  list-style: none;
+  color: white;
+}
+.cta-btn:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.header {
+  background: #393a3a;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: white;
+}
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+
+}
+
+
+a {
+  text-decoration: none;
+  list-style: none;
+  color: white;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #3498db;
+}
+
+.quote-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.quote-btn:hover {
+  background: #7f8c8d;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-title {
+  color: white;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 5rem;
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+.hero-subtitle {
+   color: white;
+  font-size: 3rem;
+  font-weight: normal;
+  margin-bottom: 5rem;
+  line-height: 1.3;
+  max-width: 600px;
+}
+
+.cta-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.cta-btn:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.hero-bg-lef {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f4f4f4" opacity="0.1"/><path d="M10 10h20v20H10zM40 10h20v20H40zM70 10h20v20H70zM10 40h20v20H10zM40 40h20v20H40zM70 40h20v20H70z" fill="%23fff" opacity="0.05"/></svg>') repeat;
+  opacity: 0.3;
+}
+
+.hero-bg-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 20%;
+}
+
+.ideas {
+  background: #ecf0f1;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 10pxpx;
+  margin-top: 20px;
+}
+
+.ideas-title {
+  color: rgb(0, 0, 0);
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+.ideas-title2 {
+  color: rgb(0, 0, 0);
+  font-size: rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+
+
+.ideas-text {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 5rem;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+
+/* Process Section */
+.process {
+  padding: 4rem 2rem;
+  background: #ecf0f1;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  color: #2c3e50;
+}
+
+.process-steps {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.step {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+}
+
+.step-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  color: #3498db;
+}
+
+.step-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.step-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.process-subtitle {
+  color: #7f8c8d;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+/* Services Section */
+.services {
+  padding: 4rem 2rem;
+  background: white;
+  text-align: center;
+}
+
+.services-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-title {
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Benefits Section */
+.benefits {
+  padding: 4rem 2rem;
+  background: #ecf0f1;
+  text-align: center;
+}
+
+.benefits-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.benefit-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+}
+
+.benefit-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  color: #3498db;
+}
+
+.benefit-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.benefit-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.benefit-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.benefit-btn:hover {
+  background: #2980b9;
+}
+
+/* Footer */
+.footer {
+  background: #2c3e50;
+  color: white;
+  padding: 2rem 0;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 3rem;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.footer-link {
+  color: #bdc3c7;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: white;
+}
+
+.footer-info {
+  text-align: right;
+}
+
+.footer-info p {
+  color: #bdc3c7;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-end;
+}
+
+.social-link {
+  color: #bdc3c7;
+  transition: color 0.3s;
+}
+
+.social-link:hover {
+  color: #3498db;
+}
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+
+
+
+/* CONTACT SECTION STYLES */
+
+.contact-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    margin: 0 auto; /* ИСПРАВЛЕНИЕ: Центрирует блок горизонтально */
+}
+
+.contact-header {
+    color: #333;
+    text-align;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-subtitle {
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1em;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contact-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.icon-wrapper {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    margin-right: 25px;
+}
+
+/* Цвета иконок */
+.telegram-bg { background-color: #ffffff; }
+.whatsapp-bg { background-color: #ffffff; }
+.gmail-bg    { background-color: #ffffff; }
+.facebook-bg { background-color: #ffffff; }
+
+.icon-wrapper svg {
+    width: 54px;
+    height: 54px;
+}
+
+.contact-info {
+    flex-grow: 1; /* ИСПРАВЛЕНИЕ: Исправлен синтаксис */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.contact-type {
+    font-weight: bold;
+    color: #333;
+    font-size: 1em;
+}
+
+.contact-detail {
+    color: #777;
+    font-size: 0.80em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Добавляет многоточие для длинных значений */
+}
+
+.copy-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    margin-left: 15px;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    flex-shrink: 0; /* Не дает кнопке сжиматься */
+}
+
+.copy-btn:hover {
+    background-color: #0056b3;
+}
+
+.copy-btn:active {
+    background-color: #004085;
+}
+
+.copy-btn.copied {
+    background-color: #28a745; /* Зеленый цвет после копирования */
+}
+
+.connection-flex {
+    box-sizing: border-box;
+    padding: 4rem 2rem;
+    background: #ecf0f1;
+    text-align: center;
+}
+/* Responsive Design */
+@media (max-width: 768px) 
+{
+     .nav {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .process-steps {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .services-grid,
+    .benefits-grid { /* ИСПРАВЛЕНИЕ: Удален лишний .connection-flex, который не является сеткой */
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .footer-info {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: 400px;
+    }
+
+    .hero-content {
+        padding: 2rem 1rem;
+    }
+
+    .ideas-title
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .cta-btn {
+        display: none;
+    }
+
+    .process,
+    .services,
+    .benefits {
+        padding: 2rem 1rem;
+    }
+    .ideas-title,
+    .section-title {
+        font-size: 1.5rem;
+    }
+}
+
+.menu-toggle {
+    display: none; /* Скрываем по умолчанию на широких экранах */
+    cursor: pointer;
+    padding: 10px;
+    z-index: 30050; /* Должен быть выше, чем nav-menu, чтобы ловить клик */
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: var(--text-light); /* #ecf0f1 */
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
 /* --- Стили для Бургер-иконки (Menu Toggle) --- */
 .menu-toggle {
     display: none; /* Скрываем по умолчанию на широких экранах */
@@ -770,4 +1521,44 @@ a {
     .menu-toggle {
         display: block; 
     }
+}
+
+/* Стили для анимации крестика */
+.menu-toggle.is-open .bar:nth-child(2) {
+    opacity: 0; /* Скрываем среднюю линию */
+}
+
+.menu-toggle.is-open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg); /* Поворот верхней линии */
+}
+
+.menu-toggle.is-open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg); /* Поворот нижней линии */
+}
+/* Адаптивность для мобильных устройств (менее 768px) */
+@media (max-width: 768px) {
+    /* ... */
+
+    /* 3. Скрываем меню по умолчанию */
+    .nav-menu {
+        display: none; /* Скрываем список ссылок */
+        flex-direction: column; 
+        
+        /* Позиционируем меню для выпадающего эффекта */
+        position: absolute;
+        top: 65px; 
+        left: 0;
+        width: 100%;
+        background: #393a3a; 
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        
+        /* ... */
+    }
+    
+    /* 4. Стиль для открытого меню (JS будет добавлять класс 'active') */
+    .nav-menu.active {
+        display: flex; /* Показываем меню, когда класс active добавлен */
+    }
+
+    /* ... */
 }

@@ -496,6 +496,13 @@ a {
 }
 
 /* --- Services Section --- */
+
+.section-title1 {
+  z-index: 200;
+  color: #000;
+  margin-bottom: 5rem;
+  font-size: 1.8rem;
+}
 .services {
   padding: 4rem 2rem;
   background: white;

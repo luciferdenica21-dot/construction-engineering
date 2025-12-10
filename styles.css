@@ -265,7 +265,7 @@ a {
 }
 
 .ideas {
-  background: rgb(255, 255, 255);
+  background: #ecf0f1;
   min-height: 500px;
   display: flex;
   align-items: center;
@@ -515,7 +515,7 @@ a {
 
 .social-links {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   justify-content: flex-end;
 }
 

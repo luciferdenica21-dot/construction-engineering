@@ -748,3 +748,26 @@ a {
     margin: 5px 0;
     transition: all 0.3s ease-in-out;
 }
+
+/* --- Стили для Бургер-иконки (Menu Toggle) --- */
+.menu-toggle {
+    display: none; /* Скрываем по умолчанию на широких экранах */
+    cursor: pointer;
+    padding: 10px;
+    z-index: 150; 
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: var(--text-light);
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 2. Показываем иконку бургера */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; 
+    }
+}

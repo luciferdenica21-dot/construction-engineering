@@ -12,14 +12,6 @@ const galleryData = [
     { id: 10, title: "Лазерная гравировка", category: "Маркировка", keywords: "laser-engraving" },
     { id: 11, title: "Сборочная линия", category: "Производство", keywords: "assembly-line" },
     { id: 12, title: "Шлифовка деталей", category: "Финишная обработка", keywords: "metal-grinding" },
-    { id: 13, title: "Промышленные искры", category: "Эстетика", keywords: "sparks-factory" },
-    { id: 14, title: "ЧПУ Пульт управления", category: "Электроника", keywords: "cnc-control-panel" },
-    { id: 15, title: "Резка нержавейки", category: "Материалы", keywords: "stainless-steel" },
-    { id: 16, title: "Сварочный шов", category: "Контроль качества", keywords: "weld-seam" },
-    { id: 17, title: "Автоматизация цеха", category: "Industry 4.0", keywords: "smart-factory" },
-    { id: 18, title: "Гибка металла", category: "Листообработка", keywords: "metal-bending" },
-    { id: 19, title: "Труборезный станок", category: "Резка труб", keywords: "pipe-cutting" },
-    { id: 20, title: "Защитная экипировка", category: "Безопасность", keywords: "welding-mask" },
 ];
 
 const galleryContainer = document.getElementById('gallery');
@@ -50,7 +42,7 @@ function renderGallery() {
             </div>
         `;
 
-        const imgElement = card.querySelector('img');
+        const imgUrl = `images/${item.keywords}.png`; 
 
         // 3. Обработчик клика (открытие модального окна)
         card.addEventListener('click', () => {
@@ -147,3 +139,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Ваш существующий или будущий код для открытия галереи должен быть здесь ---
     // Здесь вы добавите код, который ищет карточки и вызывает modal.classList.add('show');
 });
+

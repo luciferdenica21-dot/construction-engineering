@@ -1,65 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CONNECTOR</title>
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Мой Первый Сайт на Bootstrap</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+          crossorigin="anonymous">
 </head>
-
 <body>
-  <header class="logo-buttons-top">
-    <div class="container">
-      <div class="header-top">
-        <div class="logo">
-          <a href="#">
-            <img src="img/logo.png" alt="logo" class="logo-connector">
-          </a>
-          <span class="logo-brand">Connector</span>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Bootstrap Site</a>
+            <button class="navbar-toggler" type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#main">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Услуги</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="main" class="p-5 text-center bg-light">
+        <div class="container">
+            <h1 class="display-4">Добро пожаловать на наш сайт!</h1>
+            <p class="lead">Создано с помощью мощного и адаптивного фреймворка Bootstrap.</p>
+            <a href="#contact" class="btn btn-primary btn-lg mt-3">Связаться с нами</a>
+        </div>
+    </header>
+
+    <section id="services" class="container py-5">
+        <h2 class="text-center mb-4">Наши Услуги</h2>
+        <div class="row text-center">
+            
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Дизайн</h3>
+                        <p class="card-text">Профессиональное создание макетов и пользовательских интерфейсов.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h3 class="card-title text-success">Разработка</h3>
+                        <p class="card-text">Чистый и оптимизированный код для быстрого и надежного сайта.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h3 class="card-title text-danger">Поддержка</h3>
+                        <p class="card-text">Постоянная техническая поддержка и обновление вашего проекта.</p>
+                    </div>
+                </div>
+            </div>
 
         </div>
-        <div class="header-buttons">
-          <a href="#" class="btn-new"> Напишите нам и получите консультацию</a>
-          <a href="#" class="btn-new1"> Язык</a>
-        </div>
-
-      </div>
-      <nav class="header-nav">
-        <ul class="nav-list">
-          <li><a href="#">ГЛАВНАЯ</a></li>
-          <li><a href="#services">УСЛУГИ</a></li>
-          <li><a href="about.html">ГАЛЕРЕЯ</a></li>
-          <li><a href="#contacts">КОНТАКТЫ</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="hero">
-      <div class="hero-content">
-        <h1 class="h1">CONNECTOR</h1>
-        <h5 class="hero-subtitle"> Промышленное качество для ваших задач</h5>
-        <p class="ideas-text"> Нужны уникальные детали, аксессуары для интерьера или кастомные изделия для бизнеса? С
-          Connector
-          реализовать любой, даже самый необычный проект, стало просто. Мы берем на себя все: от разработки технологии
-          до размещения заказа на лучших производственных площадках Грузии.
-        </p>
-      </div>
-      <div class="hero-image">
-        <div class="hero-bg-left">
-        </div>
-        <div class="hero-bg-right">
-        </div>
-      </div>
     </section>
-  </main>
 
+    <section id="contact" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Свяжитесь с нами</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="inputName" class="form-label">Имя</label>
+                    <input type="text" class="form-control" id="inputName" placeholder="Ваше имя">
+                </div>
+                <div class="mb-3">
+                    <label for="inputEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Ваш Email">
+                </div>
+                <div class="mb-3">
+                    <label for="inputTextarea" class="form-label">Сообщение</label>
+                    <textarea class="form-control" id="inputTextarea" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Отправить</button>
+            </form>
+        </div>
+    </section>
 
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <div class="container">
+            <p class="m-0">&copy; 2025 Мой Сайт на Bootstrap. Все права защищены.</p>
+        </div>
+    </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+            crossorigin="anonymous">
+    </script>
 </body>
-
 </html>

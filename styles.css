@@ -1,438 +1,308 @@
-/* Общие стили и сброс */
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
+
+.logobrand {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 2rem;
+   
 }
 
- a {
-    text-decoration: none;
- }
 
-/* Стилизация всего блока (шапки/меню) */
-.header {
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Легкая тень для выделения блока */
-}
-
-.logo-buttons-top {
-  width: 100%;
-}
-
-/* --- Верхний сектор --- */
-
-.header-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background: #383838;
+header {
     background: linear-gradient(90deg, rgba(56, 56, 56, 1) 0%, rgba(4, 38, 74, 1) 100%, rgba(23, 98, 173, 1) 62%);
     border-radius:1px 1px 30px 30px;
-    display: flex;
-    justify-content: space-between; /* Располагаем элементы слева (можно использовать space-around или space-between) */
-    align-items: center;
 }
 
-/* Логотип */
-.logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: #000000;
-    margin-bottom: 5px;
-    line-height: 1;
+  
+
+.logotext {
+  font-size: 3rem;
+  
+  
 }
 
-.logo-connector {
-  width: 60px;
-  height: 60px;
+
+
+        .nav-bg {
+            background-color: #2c3e50;
+            /* Темно-синий/серый фон хедера */
+            color: white;
+            font-size: 24px;
+        }
+
+.process {
+  padding: 0.4rem 1rem;
+  background: #ecf0f1;
+  text-align: center;
 }
 
-.logo-brand {
-  font-size: 20px;
+.process-steps {
+  max-width: fit-content ;
+  display: flex;
+  margin: 0 auto;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.step {
+  background: white;
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+}
+
+.step-icon {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 0.2rem;
+  color: #3498db;
+}
+
+.step-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.step-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.process-subtitle {
+  color: #7f8c8d;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.services {
+  padding: 4rem 2rem;
+  background: white;
+  text-align: center;
+}
+
+.services-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-title {
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.services1 {
+  padding: 2rem 1rem;
+  background: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.services-grid1 {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+  
+}
+
+.service-card1 {
+  background: rgb(0, 0, 0);
+  border-radius: px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.service-card:hover1 {
+  transform: translateY(-5px);
+}
+
+.service-image1 {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.service-title1 {
+  padding: 0.5rem;
+  font-size: 0.5rem;
+  font-weight: 400;
+  color: #ffffff;
+
+}
+
+.section-title2 {
+  z-index: 200;
+  color: #000;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.section-title2 {
+  z-index: 200;
+  color: #000;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+
+
+.zakaz {
+  background: linear-gradient(90deg, rgba(56, 56, 56, 1) 0%, rgba(4, 38, 74, 1) 100%, rgba(23, 98, 173, 1) 62%);
   color: white;
-}
-
-/* Кнопка "Новинки 2025" */
-.btn-new {
-    text-decoration: none;
-    padding: 10px 20px;
-    border: 1px solid white;/* Цвет границы, похожий на изображение */
-    border-radius: 25px;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 500;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.btn-new1 {
-    text-decoration: none;
-    padding: 10px 20px;
-    margin: 0 5px;
-    border: 1px solid white;/* Цвет границы, похожий на изображение */
-    border-radius: 25px;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 500;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.btn-new:hover {
-    background-color: #1e5d87;
-    color: white; /* Легкое выделение при наведении */
-}
-
-.btn-new1:hover {
-    background-color: #939925;
-    color: white; /* Легкое выделение при наведении */
-}
-
-
-/* --- Нижний сектор: Горизонтальная навигация --- */
-
-.header-nav {
-    padding: 15px 0; /* Отступ сверху и снизу для навигации */
-}
-
-.nav-list {
-    list-style: none; /* Убираем стандартные маркеры списка */
-    margin: 0;
-    padding: 0;
-    display: flex; /* Делаем список горизонтальным */
-    justify-content: center; /* Располагаем элементы слева (можно использовать space-around или space-between) */
-    align-items: center;
-}
-
-.nav-list li {
-    margin-right: 150px; /* Расстояние между ссылками */
-}
-
-.nav-list li:last-child {
-    margin-right: 0; /* Убираем отступ у последнего элемента */
-}
-
-.nav-list a {
-    text-decoration: none;
-    color: #000000; /* Цвет текста */
-    font-size: 16px;
-    font-weight: 600;
-    padding: 5px 0px 0px 5px;
-    transition: color 0.3s;
-    /* Можно добавить нижнюю границу при наведении для акцента */
-}
-
-.nav-list a:hover {
-    color: #3498db; /* Цвет при наведении */
-}
-
-.hero {
-  background: #f8f8f8;
-  height: 100vh;
-  width: 100%;
-  min-height: 550px;
-  display: flex;
-  align-items: flex-start;
-  align-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-content {
-     background: #383838;
-    background: linear-gradient(90deg, rgba(56, 56, 56, 1) 0%, rgba(4, 38, 74, 1) 100%, rgba(23, 98, 173, 1) 62%);
-  border-radius:1px 1px 30px 30px;  
-  
-  padding: 5rem 10rem;
-  z-index: 2;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 
 }
 
-.h1 {
-    padding: 3rem 2.5rem 0 3rem;
-    font-size: 5.5rem;
-    font-weight: bolder;
-    color:white;
-}
 
 
-.hero-subtitle {
-  color: rgb(208, 200, 200);
-  font-weight: normal;
-  font-size: 1.5rem;
-  display: flex;
-  justify-content: center;
-  padding-bottom: 2rem ;
-}
+@media (min-width: 1200px) { 
 
-
-.ideas-text {
-    font-size: 1.8rem;
-    font-weight: lighter;
-  z-index: 3000;
-  color: #ffffff;
-  margin-bottom: 1rem;
-  line-height: 1.7;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
-
-
-
-
-
-@media (max-width: 768px) {
-
-    /* Убираем лишние отступы контейнера для мобильных */
-    .container {
-        padding: 0 3px; /* Немного отступа по бокам */
-        width: auto;
-    }
-
-    /* --- Верхний сектор: Логотип и Кнопки --- */
-    .header-top {
-        flex-direction: row; /* Элементы в столбец */
-        justify-content: center;
-        align-items: center;
-        padding: 3px 1px;
-        text-align: center;
-        border-radius: 0 0 5px 5px; /* Убираем или уменьшаем радиус углов */
-    }
-
-    /* Логотип */
-    .logo {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-left: 5px;
-    }
-
-    .logo-connector {
-        width: 27px; /* Уменьшаем размер лого-картинки */
-        height: 25px;
-    }
-
-    .logo-brand {
-      margin-top: 3px;
-        font-size: 7px; /* Уменьшаем размер текста бренда */
-        display: flex;
-        align-items: center;
-        padding-right: 330px;
-    }
-
-    /* Блок кнопок */
-    .header-buttons {
-        margin-top: 2px;
-        display: flex; /* Для размещения кнопок рядом */
-        flex-direction: row; /* Размещаем кнопки друг под другом */
-        width: 100%; /* Занимаем всю доступную ширину */
-    }
-
-    /* Стили кнопок */
-    .btn-new,
-    .btn-new1 {
-        padding: 4px 4px; /* Уменьшаем отступы кнопок */
-        font-size: 4px;
-        margin: 10px 3px; /* Добавляем отступ между кнопками */
-        width: auto; /* Автоматическая ширина */
-        display: block; /* Занимаем всю ширину */
-        justify-content: space-around;
-        border: 1px solid white;
-        border-radius: 3px;
-    }
-
-    .btn-new1:hover {
-        background-color:  #939925;
-    }
-
-    /* --- Нижний сектор: Горизонтальная навигация --- */
-    .header-nav {
-        padding: 1px 0;
-    }
-
-    .nav-list {
-        flex-direction: row; /* Элементы навигации в столбец */
-        align-items: center;
-    }
-
-    .nav-list li {
-        margin-right: 0; /* Убираем горизонтальный отступ */
-        margin-bottom: 10px; /* Добавляем вертикальный отступ */
-    }
-
-
-
-    .nav-list a {
-        font-size: 6px; /* Уменьшаем размер текста навигации */
-        padding: 2px 25px; /* Добавляем небольшие отступы для удобства нажатия */
-    }
-}
-
-
-
-/* --- Медиазапрос для экранов шириной 480px и менее (Мобильные устройства) --- */
-@media (max-width: 480px) {
-
-    /* Убираем лишние отступы контейнера для мобильных */
-    .container {
-        padding: 0 3px; /* Немного отступа по бокам */
-        width: auto;
-    }
-
-    /* --- Верхний сектор: Логотип и Кнопки --- */
-    .header-top {
-        flex-direction: row; /* Элементы в столбец */
-        justify-content: center;
-        align-items: center;
-        padding: 3px 1px;
-        text-align: center;
-        border-radius: 0 0 5px 5px; /* Убираем или уменьшаем радиус углов */
-    }
-
-    /* Логотип */
-    .logo {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-left: 5px;
-    }
-
-    .logo-connector {
-        width: 27px; /* Уменьшаем размер лого-картинки */
-        height: 25px;
-    }
-
-    .logo-brand {
-      margin-top: 3px;
-        font-size: 7px; /* Уменьшаем размер текста бренда */
-        display: flex;
-        align-items: center;
-        padding-right: 130px;
-    }
-
-    /* Блок кнопок */
-    .header-buttons {
-        margin-top: 2px;
-        display: flex; /* Для размещения кнопок рядом */
-        flex-direction: row; /* Размещаем кнопки друг под другом */
-        width: 100%; /* Занимаем всю доступную ширину */
-    }
-
-    /* Стили кнопок */
-    .btn-new,
-    .btn-new1 {
-        padding: 6px 6px; /* Уменьшаем отступы кнопок */
-        font-size: 5px;
-        margin: 10px 3px; /* Добавляем отступ между кнопками */
-        width: auto; /* Автоматическая ширина */
-        display: block; /* Занимаем всю ширину */
-        justify-content: space-around;
-        border: 1px solid white;
-        border-radius: 3px;
-    }
-
-    .btn-new {
-        background-color: #1e5d87;
-    }
-
-    .btn-new1 {
-        border-radius: 50%;
-        background-color: white;
-        color: #000000;
-        padding: 5px;
-    }
-
-    .btn-new1:hover {
-        background-color:  #939925;
-    }
-
-    /* --- Нижний сектор: Горизонтальная навигация --- */
-    .header-nav {
-        padding: 1px 0;
-    }
-
-    .nav-list {
-        flex-direction: row; /* Элементы навигации в столбец */
-        align-items: center;
-    }
-
-    .nav-list li {
-        margin-right: 0; /* Убираем горизонтальный отступ */
-        margin-bottom: 10px; /* Добавляем вертикальный отступ */
-    }
-
-
-
-    .nav-list a {
-        font-size: 6px; /* Уменьшаем размер текста навигации */
-        padding: 2px 25px; /* Добавляем небольшие отступы для удобства нажатия */
-    }
-}
-
-.hero {
-  background: #f8f8f8;
-  height: 30vh;
-  width: 100%;
-  min-height: 350px;
-  display: flex;
-  align-items: flex-start;
-  align-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-content {
-     background: #383838;
-    background: linear-gradient(90deg, rgba(56, 56, 56, 1) 0%, rgba(4, 38, 74, 1) 100%, rgba(23, 98, 173, 1) 62%);
-  border-radius:1px 1px 30px 30px;  
-  
-  width: 100%;
-  padding: 1rem 1rem;
-  z-index: 2;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  .zakaz {
+  background: linear-gradient(90deg, rgba(56, 56, 56, 1) 0%, rgba(4, 38, 74, 1) 100%, rgba(23, 98, 173, 1) 62%);
+  color: white;
+  font-size: 16px;
 
 }
 
-.h1 {
-    padding: 1rem 1rem 0 1rem;
-    font-size: 3rem;
-    font-weight: bolder;
-    color:white;
+    .logobrand {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem ;
+
+}
+
+.logotext {
+  font-size: 1rem ; 
 }
 
 
-.hero-subtitle {
-  color: rgb(208, 200, 200);
-  font-weight: normal;
-  font-size: 0.90rem;
-  display: flex;
-  justify-content: center;
-  padding-bottom: 1rem;
+ 
+.links {
+  gap: 10px;
 }
 
-
-.ideas-text {
-    font-size: 0.5rem;
-    font-weight: lighter;
-  z-index: 3000;
-  color: #ffffff;
-  margin-bottom: 1rem;
-  line-height: 1.;
-  padding: 0 30px;
-  display: flex;
+.services1 {
+  padding: 2rem 1rem;
+  background: rgb(255, 255, 255);
   text-align: center;
 }
 
+.services-grid1 {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+  
+}
+
+.service-card1 {
+  background: rgb(0, 0, 0);
+  padding-top: ;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.service-card:hover1 {
+  transform: translateY(-5px);
+}
+
+.service-card2 {
+  background: rgb(0, 0, 0);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.service-card:hover2 {
+  transform: translateY(-5px);
+}
+
+.service-card3 {
+  background: rgb(0, 0, 0);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.service-card:hover3 {
+  transform: translateY(-5px);
+}
+
+.service-card4 {
+  background: rgb(0, 0, 0);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.service-card:hover4 {
+  transform: translateY(-5px);
+}
+
+.service-image1 {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.service-title1 {
+  margin-bottom: 10px;
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+
+}
+
+
+
+.section-title2 {
+  z-index: 200;
+  color: #000;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+.section-title1 {
+  z-index: 200;
+  color: #000;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+}

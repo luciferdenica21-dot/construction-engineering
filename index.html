@@ -2,192 +2,218 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VK Mobile Скелет</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KONNEKTOR: Промышленное качество</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Общие стили для имитации VK */
-        body {
-            background-color: #f0f2f5; /* Светло-серый фон */
-            padding-top: 56px; /* Компенсация фиксированного верхнего Navbar */
-            padding-bottom: 56px; /* Компенсация фиксированного нижнего Navbar */
+        /* Определение кастомных цветов в конфигурации Tailwind */
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'header-bg': '#2c3e50', /* Темно-синий/серый фон хедера */
+                        'custom-blue': '#3498db', /* Голубой акцент */
+                    }
+                }
+            }
         }
-        
-        /* Стилизация верхнего Navbar, похожая на VK (Синий или белый) */
-        .vk-navbar {
-            background-color: #4a76a8; /* Стандартный синий цвет VK */
-            height: 56px; /* Типичная высота мобильной шапки */
+        /* Кастомные стили для эмуляции поведения Bootstrap или для специфики */
+        .hero-section {
+            padding-top: 5rem; /* 80px */
+            padding-bottom: 5rem; /* 80px */
         }
-        .vk-navbar .navbar-brand {
-            color: white;
-            font-weight: bold;
-            font-size: 1.25rem;
+        .task-card img, .task-card .img-placeholder {
+            height: 150px;
+            object-fit: cover;
+            filter: grayscale(100%); /* Имитация черно-белого/затемненного изображения */
         }
-        
-        /* Стилизация нижнего Navbar (VK Bottom Tab Bar) */
-        .vk-bottom-nav {
-            height: 56px; /* Типичная высота нижней навигации */
-            background-color: white;
-            box-shadow: 0 -2px 5px rgba(0,0,0,.05);
-            padding: 0;
-            margin: 0;
+        .task-card:hover img {
+            filter: grayscale(0%); /* Убрать фильтр при наведении (опционально) */
         }
-        .vk-bottom-nav .nav-link {
-            color: #4a76a8; /* Синие активные иконки */
-            font-size: 0.7rem;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .vk-bottom-nav .nav-link i {
-            font-size: 1.25rem;
-            margin-bottom: 3px;
-        }
-
-        /* Горизонтальный скролл для историй */
-        .stories-container {
-            overflow-x: auto;
-            white-space: nowrap;
-            padding: 10px 0;
-            background-color: white;
-            border-bottom: 1px solid #ddd;
-        }
-        .story-item {
-            display: inline-block;
-            width: 70px; /* Типичный размер для мобильных историй */
-            text-align: center;
-            margin-left: 8px;
-        }
-        .story-item img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 2px solid #4a76a8; /* Синяя рамка */
-        }
-        .story-item small {
-            display: block;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            font-size: 0.7rem;
-        }
-
-        /* Стиль карточки поста */
-        .post-card {
-            border-radius: 0;
-            margin-bottom: 10px;
-            border: none;
-        }
-        .post-card .card-header, .post-card .card-footer {
-            background-color: white;
-            border: none;
-        }
-
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg fixed-top vk-navbar">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">ВКонтакте</a>
-        <div class="d-flex">
-            <button class="btn text-white me-2" type="button">
-                <i class="fas fa-search"></i>
+    <nav class="bg-header-bg text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between py-3">
+            
+            <a class="text-white font-bold text-xl" href="#">
+                Konnektor
+            </a>
+            
+            <a href="tel:+" class="hidden lg:block bg-custom-blue hover:bg-blue-600 text-white font-semibold py-1.5 px-3 rounded text-sm transition duration-150">
+                Связаться по телефону
+            </a>
+            
+            <button id="menu-toggle" class="lg:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
-            <button class="btn text-white" type="button">
-                <i class="fas fa-bell"></i>
-            </button>
-        </div>
-    </div>
-</nav>
-
-<div class="container-fluid p-0">
-    
-    <div class="stories-container">
-        <div class="story-item">
-            <img src="https://via.placeholder.com/50/dddddd" alt="Add" style="border: none;">
-            <small>Моя история</small>
-        </div>
-        <div class="story-item">
-            <img src="https://via.placeholder.com/50/ff9900/ffffff" alt="User1">
-            <small>Александр</small>
-        </div>
-        <div class="story-item">
-            <img src="https://via.placeholder.com/50/4a76a8/ffffff" alt="User2">
-            <small>Ксения</small>
-        </div>
-        <div class="story-item">
-            <img src="https://via.placeholder.com/50/00cc99/ffffff" alt="User3">
-            <small>Владимир</small>
-        </div>
-        <div class="story-item">
-            <img src="https://via.placeholder.com/50/ff0000/ffffff" alt="User4">
-            <small>Мария</small>
-        </div>
-        <div class="story-item">
-            <img src="https://via.placeholder.com/50/0000ff/ffffff" alt="User5">
-            <small>Дмитрий</small>
-        </div>
-    </div>
-
-    <div class="card post-card">
-        <div class="card-header d-flex align-items-center">
-            <img src="https://via.placeholder.com/40" class="rounded-circle me-2" alt="Avatar" style="width: 40px; height: 40px;">
-            <div>
-                <h6 class="mb-0">Название Группы</h6>
-                <small class="text-muted">вчера в 14:30</small>
+            
+            <div id="nav-menu" class="hidden w-full lg:flex lg:w-auto lg:items-center">
+                <ul class="flex flex-col lg:flex-row lg:space-x-4 mt-2 lg:mt-0 lg:ml-auto">
+                    <li class="lg:hidden mb-2"><a class="block text-sm py-2 px-3 hover:bg-gray-700 rounded" href="#">Связаться по телефону</a></li>
+                    <li><a class="block lg:inline-block text-sm py-2 px-3 hover:bg-gray-700 rounded" href="#">КАК РАБОТАЕТ</a></li>
+                    <li><a class="block lg:inline-block text-sm py-2 px-3 hover:bg-gray-700 rounded" href="#">УСЛОВИЯ</a></li>
+                    <li><a class="block lg:inline-block text-sm py-2 px-3 hover:bg-gray-700 rounded" href="#">УСЛУГИ</a></li>
+                    <li><a class="block lg:inline-block text-sm py-2 px-3 hover:bg-gray-700 rounded" href="#">КОНТАКТЫ</a></li>
+                    <li><a class="block lg:inline-block text-sm py-2 px-3 hover:bg-gray-700 rounded" href="#">ВОЙТИ</a></li>
+                </ul>
             </div>
-            <button class="btn ms-auto text-muted"><i class="fas fa-ellipsis-v"></i></button>
+            
         </div>
-        
-        <div class="card-body py-2">
-            <p class="card-text">Здесь находится текст поста...</p>
-            <img src="https://via.placeholder.com/600x400/dddddd/333333?text=Content+Image" class="img-fluid rounded" alt="Post content">
-        </div>
-        
-        <div class="card-footer d-flex justify-content-between">
-            <button class="btn btn-sm text-muted"><i class="far fa-heart me-1"></i> 150</button>
-            <button class="btn btn-sm text-muted"><i class="far fa-comment me-1"></i> 25</button>
-            <button class="btn btn-sm text-muted"><i class="fas fa-share me-1"></i> 10</button>
-        </div>
-    </div>
-    
-    <div class="card post-card">
-        <div class="card-header d-flex align-items-center">
-            <img src="https://via.placeholder.com/40/ff00ff/ffffff" class="rounded-circle me-2" alt="Avatar" style="width: 40px; height: 40px;">
-            <div>
-                <h6 class="mb-0">Другой Пользователь</h6>
-                <small class="text-muted">только что</small>
+    </nav>
+
+    <header class="bg-header-bg text-white text-center hero-section">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl sm:text-5xl font-extrabold mb-4 leading-tight">
+                    KONNEKTOR: <br> ПРОМЫШЛЕННОЕ КАЧЕСТВО ДЛЯ ВАШИХ ИДЕЙ
+                </h1>
+                <p class="text-lg mb-8">
+                    Закажите лазерную, ЧПУ обработку и сварку у B2B-поставщиков России. Быстро, просто и с гарантией.
+                </p>
+                <a href="#" class="inline-flex items-center justify-center bg-custom-blue hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg text-lg uppercase transition duration-150 shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-cloud-upload mr-2" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4.406 1.398l.732.677C3.593 2.909 3 3.999 3 5a5 5 0 0 0 9.878 1.942l.732-.677c.43-.398.882-.796 1.34-1.196L15.5 3.5a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5h-15a.5.5 0 0 1-.5-.5V4a.5.5 0 0 1 .5-.5l1.696-1.558c.458-.4.91-.8 1.34-1.196zM1 4v10h14V4h-.008L12.5 5.5l-1.696-1.558c.458-.4.91-.8 1.34-1.196zM7.5 7v4H5v-4h2.5zM11 7v4H8.5v-4H11z"/>
+                        <path d="M7 15v1h2v-1H7z"/>
+                    </svg>
+                    ЗАГРУЗИТЕ ФАЙЛ И ПОЛУЧИТЕ РАСЧЕТ ЗА 5 МИНУТ
+                </a>
             </div>
-            <button class="btn ms-auto text-muted"><i class="fas fa-ellipsis-v"></i></button>
         </div>
-        <div class="card-body py-2">
-            <p class="card-text">Еще один пост, чтобы заполнить экран.</p>
-        </div>
-        <div class="card-footer d-flex justify-content-between">
-            <button class="btn btn-sm text-muted"><i class="far fa-heart me-1"></i> 5</button>
-            <button class="btn btn-sm text-muted"><i class="far fa-comment me-1"></i> 1</button>
-            <button class="btn btn-sm text-muted"><i class="fas fa-share me-1"></i> 0</button>
-        </div>
-    </div>
-    
-</div>
+    </header>
 
-<nav class="navbar fixed-bottom vk-bottom-nav">
-    <div class="container-fluid d-flex justify-content-around">
-        <a class="nav-link active" href="#"><i class="fas fa-newspaper"></i>Новости</a>
-        <a class="nav-link" href="#"><i class="fas fa-search"></i>Поиск</a>
-        <a class="nav-link" href="#"><i class="fas fa-plus-circle"></i>Сервисы</a>
-        <a class="nav-link" href="#"><i class="fas fa-comment-dots"></i>Сообщения</a>
-        <a class="nav-link" href="#"><i class="fas fa-user-circle"></i>Профиль</a>
-    </div>
-</nav>
+    <section class="py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-10">ВАША ИДЕЯ В 4 ШАГА</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 justify-center">
+                <div class="p-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-file-text w-10 h-10 mx-auto text-custom-blue" viewBox="0 0 16 16">
+                        <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/>
+                        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
+                    </svg>
+                    <p class="mt-3 font-bold">1. ЗАГРУЗКА</p>
+                </div>
+                <div class="p-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-clock w-10 h-10 mx-auto text-custom-blue" viewBox="0 0 16 16">
+                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm0-1A7 7 0 1 1 8 1a7 7 0 0 1 0 14z"/>
+                    </svg>
+                    <p class="mt-3 font-bold">2. РАСЧЕТ</p>
+                </div>
+                <div class="p-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-gear w-10 h-10 mx-auto text-custom-blue" viewBox="0 0 16 16">
+                        <path d="M8 10.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+                        <path d="M12.55 3.968l-1.04-.645a4.02 4.02 0 0 0-.67-.61l-.645-1.04A.5.5 0 0 0 9.875 1.5H6.125a.5.5 0 0 0-.315.093l-.645 1.04c-.21.338-.4.68-.61.67-.348-.348-.696-.696-1.04-.645A4.02 4.02 0 0 0 1.5 6.125a.5.5 0 0 0 .093.315l1.04.645c.338.21.68.4.67.61l-.645 1.04a.5.5 0 0 0 .093.315h3.75a.5.5 0 0 0 .315-.093l.645-1.04c.21-.338.4-.68.61-.67.348.348.696.696 1.04-.645A4.02 4.02 0 0 0 14.5 9.875a.5.5 0 0 0-.093-.315l-1.04-.645c-.338-.21-.68-.4-.67-.61l.645-1.04a.5.5 0 0 0-.093-.315zM8 12.5A4.5 4.5 0 1 1 8 3.5a4.5 4.5 0 0 1 0 9z"/>
+                    </svg>
+                    <p class="mt-3 font-bold">3. ПРОИЗВОДСТВО</p>
+                </div>
+                <div class="p-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-truck w-10 h-10 mx-auto text-custom-blue" viewBox="0 0 16 16">
+                        <path d="M0 3.5A.5.5 0 0 1 .5 3h9a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-9A.5.5 0 0 1 0 5.5v-2zm1.293 2.854l1.147-1.147L3.999 5.5H1.293zm8.414.5a.5.5 0 0 0 .353-.146l1.147-1.147V5.5H9.707a.5.5 0 0 0-.353.146z"/>
+                        <path d="M12.707 5.5l-1.147 1.147a.5.5 0 0 1-.353.146H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h9a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V3h.707l1.147 1.147a.5.5 0 0 0 .353.146h7.586a.5.5 0 0 0 .353-.146l1.147-1.147H14.5v-.5a.5.5 0 0 1 1 0v.5h-2.586zM15 11.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM5 11.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                        <path d="M11 11.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm4.5-.5h-2A.5.5 0 0 0 12 11V7a.5.5 0 0 0-.5-.5H3a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5h-2A.5.5 0 0 1 1 12h14a.5.5 0 0 1 .5.5z"/>
+                    </svg>
+                    <p class="mt-3 font-bold">4. ДОСТАВКА</p>
+                </div>
+            </div>
+            <a href="#" class="text-custom-blue hover:text-blue-700 text-sm mt-6 inline-block">Подробнее о процессе</a>
+        </div>
+    </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-10">КАКИЕ ЗАДАЧИ МЫ РЕШАЕМ?</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-lg shadow-md h-full task-card transition duration-300 hover:shadow-xl">
+                    <div class="img-placeholder bg-gray-400 h-[150px] rounded-t-lg"></div>
+                    <div class="p-2">
+                        <p class="font-bold text-sm">Лазерная Резка Металла</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md h-full task-card transition duration-300 hover:shadow-xl">
+                    <div class="img-placeholder bg-gray-400 h-[150px] rounded-t-lg"></div>
+                    <div class="p-2">
+                        <p class="font-bold text-sm">ЧПУ-Обработка</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md h-full task-card transition duration-300 hover:shadow-xl">
+                    <div class="img-placeholder bg-gray-400 h-[150px] rounded-t-lg"></div>
+                    <div class="p-2">
+                        <p class="font-bold text-sm">ЧПУ Обработка Рамки</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md h-full task-card transition duration-300 hover:shadow-xl">
+                    <div class="img-placeholder bg-gray-400 h-[150px] rounded-t-lg"></div>
+                    <div class="p-2">
+                        <p class="font-bold text-sm">Сварочные Работы</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-10">ПОЧЕМУ KONNEKTOR?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white h-full p-6 border rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-shield-check w-8 h-8 mx-auto text-custom-blue mb-3" viewBox="0 0 16 16">
+                        <path d="M5.338 1.432A1.85 1.85 0 0 0 4.5 1C1.96 1 0 3.24 0 6.136v4.675C0 12.83 1.251 15 3.5 15c.954 0 1.905-.387 2.766-1.144L7.5 13.886l1.234 1.18c.861.757 1.812 1.144 2.766 1.144 2.249 0 3.5-2.17 3.5-4.19V6.136C16 3.24 14.04 1 11.5 1A1.85 1.85 0 0 0 10.662 1.432c.57.172 1.05.485 1.488.892L11 3.24V6.136c0 .548-.12.87-.27.994-.15.124-.37.186-.66.186h-6.14c-.29 0-.51-.062-.66-.186-.15-.124-.27-.446-.27-.994V3.24L3.85 2.324c.438-.407.918-.72 1.488-.892zM8 11.354a.5.5 0 0 0-.708-.708l-2.5 2.5a.5.5 0 0 0 0 .708l.396.396a.5.5 0 0 0 .708 0L8 12.062l2.354 2.354a.5.5 0 0 0 .708 0l.396-.396a.5.5 0 0 0 0-.708l-2.5-2.5z"/>
+                    </svg>
+                    <p class="font-bold mb-1">100% Гарантия качества</p>
+                    <p class="text-gray-500 text-sm mb-4">Нам доверяют</p>
+                    <a href="#" class="text-custom-blue border border-custom-blue hover:bg-custom-blue hover:text-white text-sm font-semibold py-1 px-3 rounded-full transition duration-150">Поднять все услуги</a>
+                </div>
+                <div class="bg-white h-full p-6 border rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-bookmark w-8 h-8 mx-auto text-custom-blue mb-3" viewBox="0 0 16 16">
+                        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.552a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                    </svg>
+                    <p class="font-bold mb-1">Правильное Ценообразование</p>
+                    <p class="text-gray-500 text-sm mb-4">Подробная аналитика</p>
+                    <a href="#" class="text-custom-blue border border-custom-blue hover:bg-custom-blue hover:text-white text-sm font-semibold py-1 px-3 rounded-full transition duration-150">Поднять все услуги</a>
+                </div>
+                <div class="bg-white h-full p-6 border rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat-dots w-8 h-8 mx-auto text-custom-blue mb-3" viewBox="0 0 16 16">
+                        <path d="M5 8a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm4 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm4 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                        <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12.5 7.788 1-1V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h4.414a1 1 0 0 1 .707.293l1.586 1.586V12.72c.324-.108.637-.243.93-.418.57-.323 1.076-.74 1.464-1.274.34-.486.536-1.077.536-1.745z"/>
+                    </svg>
+                    <p class="font-bold mb-1">Диалог с B2B-Монисты</p>
+                    <p class="text-gray-500 text-sm mb-4">Прямое общение</p>
+                    <a href="#" class="text-custom-blue border border-custom-blue hover:bg-custom-blue hover:text-white text-sm font-semibold py-1 px-3 rounded-full transition duration-150">Поднять все услуги</a>
+                </div>
+                <div class="bg-white h-full p-6 border rounded-lg shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-repeat w-8 h-8 mx-auto text-custom-blue mb-3" viewBox="0 0 16 16">
+                        <path d="M11.534 7h3.963a.125.125 0 0 1 .125.125v1.75a.125.125 0 0 1-.125.125h-3.963a.5.5 0 0 0 0 1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H11.534a.5.5 0 0 0 0 1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H11.534a.5.5 0 0 0 0 1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H11.534a.5.5 0 0 0 0 1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H11.534a.5.5 0 0 0 0 1H14a.5.5 0 0 1 .5.5v1.75a.125.125 0 0 1-.125.125H.125a.125.125 0 0 1-.125-.125V7.125A.125.125 0 0 1 .125 7h11.409z"/>
+                    </svg>
+                    <p class="font-bold mb-1">Непрерывные Заявки для Бизнеса</p>
+                    <p class="text-gray-500 text-sm mb-4">Автоматизация</p>
+                    <a href="#" class="text-custom-blue border border-custom-blue hover:bg-custom-blue hover:text-white text-sm font-semibold py-1 px-3 rounded-full transition duration-150">Поднять все услуги</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-header-bg text-white py-3">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                
+                <ul class="flex space-x-4 text-sm mb-2 md:mb-0">
+                    <li><a href="#" class="text-white hover:text-gray-300 transition duration-150">УСЛУГИ</a></li>
+                    <li><a href="#" class="text-white hover:text-gray-300 transition duration-150">ПОЛИТИКА</a></li>
+                    <li><a href="#" class="text-white hover:text-gray-300 transition duration-150">КОНТАКТЫ</a></li>
+                </ul>
+                
+                <p class="text-xs text-center md:text-right">Все - Производители! Сайт поставщика Konnektor.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            var menu = document.getElementById('nav-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
 </body>
-        </html>
-        
+</html>

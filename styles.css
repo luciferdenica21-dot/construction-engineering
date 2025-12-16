@@ -183,7 +183,7 @@ header {
 
 
 
-@media (min-width: 1200px) { 
+@media (min-width: 768px) { 
 
   .zakaz {
   background: linear-gradient(90deg, rgba(56, 56, 56, 1) 0%, rgba(4, 38, 74, 1) 100%, rgba(23, 98, 173, 1) 62%);
@@ -306,3 +306,10 @@ header {
 }
 
 }
+
+
+
+
+
+
+
